@@ -1,1 +1,43 @@
-hello
+---
+layout: default
+---
+<div id="navbar" class="container">
+    <h5><a id="link-back" href="/">Back to Posts</a></h5>
+</div>
+
+<div id="cover" class="container"
+     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
+    <div>
+        <h1>{{ page.title }}</h1>
+    </div>
+</div>
+
+<div id="content" class="container post" role="main">
+    <div id="post-content">{{ content }}</div>
+    <div id="post-footer">
+        <p id="post-date">{{ page.date | date: '%Y-%m-%d %H:%M' }}</p>
+    </div>
+</div>
+
+<div id="post-links" class="container">
+    {% assign prev = page.previous %}
+    {% if prev %}
+        <div id="post-prev"
+             {% if prev.image %}style="background-image: url({{ prev.image }});"{% endif %}>
+            <div>
+                <h3><a href="{{ prev.url }}">{{ prev.title }}</a></h3>
+                <p>YOU MIGHT ENJOY</p>
+            </div>
+        </div>
+    {% endif %}
+    {% assign next = page.next %}
+    {% if next %}
+        <div id="post-next"
+             {% if next.image %}style="background-image: url({{ next.image }});"{% endif %}>
+            <div>
+                <h3><a href="{{ next.url }}">{{ next.title }}</a></h3>
+                <p>NEXT POST</p>
+            </div>
+        </div>
+    {% endif %}
+</div>
