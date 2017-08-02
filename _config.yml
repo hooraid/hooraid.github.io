@@ -16,17 +16,32 @@
 title: Hooraid ChickenFactory
 email: hooraid@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  공사중입니다. 7월내 완공예정
+  공사중입니다. 8월내 완공예정
 baseurl: "" # the subpath of your site, e.g. /blog
+timezone: Asia/Seoul
 url: "https://hooraid.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 facebook_username: jekyllrb
 github_username:  hooraid
+repository: hooraid/hooraid.github.io
 
 # Build settings
 markdown: kramdown
-theme: minima
-gems:
-  - jekyll-feed
+krandown:
+  input: GFM
+  highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: '/page/:num/'
+
+
+
+exclude: [README.md, Gemfile, Gemfile.lock]
+
+keep_files: [assets, files]
+asset_url: /assets
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
