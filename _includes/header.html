@@ -1,1 +1,14 @@
-header
+<div id="header">
+    <a id="logo" href="/">
+        <span class="sr-only">KakaoTech</span>
+    </a>
+
+    <ul id="menu" class="nav">
+        <li class="{% if page.url != '/about/' and page.url != '/develop/' and page.url != '/diary/' %} active {% endif %}"><a href="{{ base_path }}/">main</a></li>
+        <li class="{% if page.url == '/about/' %} active {% endif %}"><a href="{{ base_path }}/about/">about</a></li>
+        <li class="{% if page.url == '/develop/' %} active {% endif %}"><a href="{{ base_path }}/develop/">develop</a></li>
+        <li class="{% if page.url == '/diary/' %} active {% endif %}"><a href="{{ base_path }}/diary/">diary</a></li>
+    </ul>
+</div>
+<!-- #header -->
+

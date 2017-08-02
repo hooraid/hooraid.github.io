@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<style>
+    .category a{cursor:pointer;}
+    .category .hide{display:none;}
+</style>
+
+
+<div id="cover" class="container-fluid"
+     {% if page.image %}style="background-image: url({{ page.image }});"{% endif %}>
+    <div>
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.description | newline_to_br }}</p>
+    </div>
+</div>
+
+
+<div id="content" class="container">
+    <ul>
+        <li class="category">
+            <a class="fold_menu"><img src="" alt="category1"/></a>
+            <ul class="hide">
+                <li>post1-1</li>
+                <li>post1-2</li>
+                <li>post1-3</li>
+                <li>post1-4</li>
+                <li>post1-5</li>
+                <li>post1-6</li>
+            </ul>
+        </li>
+ 
+        <li class="category">
+            <a class="fold_menu"><img src="" alt="category2"/></a>
+            <ul class="hide">
+                <li>post2-1</li>
+                <li>post2-2</li>
+                <li>post2-3</li>
+                <li>post2-4</li>
+                <li>post2-5</li>
+                <li>post2-6</li>
+            </ul>
+        </li>
+    </ul>
+
+    <div id="post-content" class="post page" role="main">
+        {{ content }}
+    </div>
+</div>
